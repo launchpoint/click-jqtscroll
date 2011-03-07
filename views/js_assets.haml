@@ -1,0 +1,12 @@
+:js
+  var jQT = new $.jQTouch({
+      icon: 'jqtouch.png',
+      addGlossToIcon: false,
+      startupScreen: 'jqt_startup.png',
+      statusBar: 'black',
+      preloadImages: [
+        <? foreach(glob($this_module_fpath."/assets/themes/{$jqtouch_settings['active_theme']}/img/*.*") as $fname): ?>
+          '<?=j(ftov($fname))?>',
+        <? endforeach; ?>
+      ]
+  });
